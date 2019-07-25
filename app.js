@@ -33,7 +33,7 @@ app.get('/',(req,res)=>{
 
 
 var store
-//@create new datastore
+//gets data from datastore file if it exists
 app.get('/:filename',(req,res)=>{
     store=new datastore({path:`./data-store/${req.params.filename}.json`})
     // res.json(`Currently ,You are in ${req.params.filename} file`)
@@ -42,7 +42,8 @@ app.get('/:filename',(req,res)=>{
 
 
 
-//@post/:filename/create
+//@post/:filename/update
+//create or updates data into data-store
 app.post('/:filename/update',(req,res)=>{
     
     store=new datastore({path:`./data-store/${req.params.filename}.json`})
