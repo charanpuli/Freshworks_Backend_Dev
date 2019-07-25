@@ -85,7 +85,7 @@ app.get('/:filename/getvalue',(req,res)=>{
 })
 
 //delete    
-//@post/:filename/delete
+//@delete/:filename/delete
 app.delete('/:filename/delete',(req,res)=>{
     store=new datastore({path:`./data-store/${req.params.filename}.json`})
     var count=0
